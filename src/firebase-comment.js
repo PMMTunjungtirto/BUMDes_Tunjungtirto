@@ -7,6 +7,7 @@ import { collection, addDoc } from "@firebase/firestore";
 const firebaseConfig = {
     apiKey: "AIzaSyCDVoatikhMZYsC8Ek4YZ54SB2w-ZW_Nmc",
     authDomain: "desa-tunjungtirto-99cc7.firebaseapp.com",
+    databaseURL: "https://desa-tunjungtirto-99cc7-default-rtdb.firebaseio.com",
     projectId: "desa-tunjungtirto-99cc7",
     storageBucket: "desa-tunjungtirto-99cc7.firebasestorage.app",
     messagingSenderId: "835214097591",

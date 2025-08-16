@@ -12,7 +12,8 @@ import WelcomeScreen from "./Pages/WelcomeScreen";
 import Chatbot from "./components/Chatbot.jsx";
 import { AnimatePresence } from 'framer-motion';
 import PujaseraDetails from "./components/PujaseraDetail.jsx";
-
+import MonitoringPoin from "./components/MonitoringPoin.jsx";
+import UploadData_Point_SamberPetir from "./components/UploadData_Point_SamberPetir.jsx";
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
   return (
     <>
@@ -29,8 +30,11 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
           <Home />
           <About />
           <Portofolio />
+          <MonitoringPoin />
+            {/*<UploadData_Point_SamberPetir />*/}
           <ContactPage />
           <Chatbot />
+
           <footer>
             <center>
 
