@@ -71,7 +71,7 @@ const ProjectStats = ({ project }) => {
           </div>
           <div className="flex-grow">
             <div className="text-lg md:text-xl font-semibold text-purple-600">{featuresCount}</div>
-            <div className="text-[10px] md:text-xs text-gray-600">Informasi Jadwal Pelayanan di Klinik Tirto Husada</div>
+            <div className="text-[10px] md:text-xs text-gray-600">Informasi Pelayanan di Klinik Tirto Husada</div>
           </div>
         </div>
       </div>
@@ -321,7 +321,7 @@ const ProjectDetails = () => {
                 <div className="bg-gray-200/30 backdrop-blur-xl rounded-2xl p-8 border border-gray-200/20 space-y-6 hover:border-gray-200/40 transition-colors duration-300 group">
                   <h3 className="text-xl font-semibold text-gray-800 flex items-center gap-3">
                     <Star className="w-5 h-5 text-yellow-500 group-hover:rotate-[20deg] transition-transform duration-300" />
-                    JADWAL PELAYANAN
+                    INFORMASI PELAYANAN
                   </h3>
                   {project.Features.length > 0 ? (
                       <ul className="list-none space-y-2">

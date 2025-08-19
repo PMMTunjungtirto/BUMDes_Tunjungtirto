@@ -11,6 +11,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import CardProject from "../components/CardProject";
 import CardPujasera from "../components/CardPujasera";
+import CardTirtoexpress from "../components/CardTirtoexpress";
 import TechStackIcon from "../components/TechStackIcon";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -122,10 +123,10 @@ export default function FullWidthTabs() {
   const [projects, setProjects] = useState([]);
   const [pujasera, setPujasera] = useState([]); // State baru untuk pujasera
   const [certificates, setCertificates] = useState([]);
-  const [sambarpetir, setSambarpetir] = useState([]);
+  const [tirtoexpress, setTirtoexpress] = useState([]);
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [showAllPujasera, setShowAllPujasera] = useState(false); // State baru untuk toggle pujasera
-  const [showAllSambarpetir, setShowAllSambarpetir] = useState(false);
+  const [showAllTirtoexpress, setShowAllTirtoexpress] = useState(false);
   const [showAllCertificates, setShowAllCertificates] = useState(false);
   const isMobile = window.innerWidth < 768;
   const initialItems = isMobile ? 4 : 6;
@@ -142,13 +143,13 @@ export default function FullWidthTabs() {
       const projectCollection = collection(db, "projects");
       const pujaseraCollection = collection(db, "pujasera"); // Koleksi baru untuk pujasera
       const certificateCollection = collection(db, "certificates");
-      const sambarpetirCollection = collection(db, "sambarpetir");
+      const tirtoexpressCollection = collection(db, "tirtoexpress");
 
-      const [projectSnapshot, pujaseraSnapshot, certificateSnapshot, sambarpetirSnapshot] = await Promise.all([
+      const [projectSnapshot, pujaseraSnapshot, certificateSnapshot, tirtoexpressSnapshot] = await Promise.all([
         getDocs(projectCollection),
         getDocs(pujaseraCollection),
         getDocs(certificateCollection),
-        getDocs(sambarpetirCollection),
+        getDocs(tirtoexpressCollection),
       ]);
 
       const projectData = projectSnapshot.docs.map((doc) => ({
@@ -162,7 +163,7 @@ export default function FullWidthTabs() {
         TechStack: doc.data().TechStack || [],
       }));
       const certificateData = certificateSnapshot.docs.map((doc) => doc.data());
-      const sambarpetirData = sambarpetirSnapshot.docs.map((doc) => ({
+      const tirtoexpressData = tirtoexpressSnapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
         TechStack: doc.data().TechStack || [],
@@ -171,13 +172,13 @@ export default function FullWidthTabs() {
       setProjects(projectData);
       setPujasera(pujaseraData); // Set data pujasera
       setCertificates(certificateData);
-      setSambarpetir(sambarpetirData);
+      setTirtoexpress(tirtoexpressData);
 
       // Store in localStorage
       localStorage.setItem("projects", JSON.stringify(projectData));
       localStorage.setItem("pujasera", JSON.stringify(pujaseraData)); // Simpan data pujasera
       localStorage.setItem("certificates", JSON.stringify(certificateData));
-      localStorage.setItem("sambarpetir", JSON.stringify(sambarpetirData));
+      localStorage.setItem("tirtoexpress", JSON.stringify(tirtoexpressData));
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -196,8 +197,8 @@ export default function FullWidthTabs() {
       setShowAllProjects(prev => !prev);
     } else if (type === 'pujasera') {
       setShowAllPujasera(prev => !prev); // Toggle untuk pujasera
-    } else if (type === 'sambarpetir') {
-      setShowAllSambarpetir(prev => !prev);
+    } else if (type === 'tirtoexpress') {
+      setShowAllTirtoexpress(prev => !prev);
     } else {
       setShowAllCertificates(prev => !prev);
     }
@@ -205,7 +206,7 @@ export default function FullWidthTabs() {
 
   const displayedProjects = showAllProjects ? projects : projects.slice(0, initialItems);
   const displayedPujasera = showAllPujasera ? pujasera : pujasera.slice(0, initialItems); // Data yang ditampilkan untuk pujasera
-  const displayedSambarpetir = showAllSambarpetir ? sambarpetir : sambarpetir.slice(0, initialItems);
+  const displayedTirtoexpress = showAllTirtoexpress ? tirtoexpress : tirtoexpress.slice(0, initialItems);
   const displayedCertificates = showAllCertificates ? certificates : certificates.slice(0, initialItems);
 
   return (
@@ -308,14 +309,9 @@ export default function FullWidthTabs() {
                   {...a11yProps(1)}
               />
               <Tab
-                  icon={<Award className="mb-2 w-5 h-5 transition-all duration-300" />}
-                  label="Gallery"
+                  icon={<Book className="mb-2 w-5 h-5 transition-all duration-300" />}
+                  label="Tirto Express"
                   {...a11yProps(2)}
-              />
-              <Tab
-                  icon={<CloudLightning className="mb-2 w-5 h-5 transition-all duration-300" />}
-                  label="SAMBARPETIR"
-                  {...a11yProps(3)}
               />
             </Tabs>
           </AppBar>
@@ -385,9 +381,38 @@ export default function FullWidthTabs() {
                   </div>
               )}
             </TabPanel>
-
-
+            {/*Tabpanel Tirto express*/}
             <TabPanel value={value} index={2} dir={theme.direction}>
+              <div className="container mx-auto flex justify-center items-center overflow-hidden">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-5">
+                  {displayedTirtoexpress.map((tirtoexpress, index) => (
+                      <div
+                          key={tirtoexpress.id || index}
+                          data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
+                          data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
+                      >
+                        <CardTirtoexpress
+                            Img={tirtoexpress.Img}
+                            Title={tirtoexpress.Title}
+                            Description={tirtoexpress.Description}
+                            Link={tirtoexpress.Link}
+                            id={tirtoexpress.id}
+                        />
+                      </div>
+                  ))}
+                </div>
+              </div>
+              {tirtoexpress.length > initialItems && (
+                  <div className="mt-6 w-full flex justify-start">
+                    <ToggleButton
+                        onClick={() => toggleShowMore('tirtoexpress')}
+                        isShowingMore={showAllTirtoexpress}
+                    />
+                  </div>
+              )}
+            </TabPanel>
+
+            <TabPanel value={value} index={4} dir={theme.direction}>
               <div className="container mx-auto flex justify-center items-center overflow-hidden">
                 <div className="grid grid-cols-1 md:grid-cols-3 md:gap-5 gap-4">
                   {displayedCertificates.map((certificate, index) => (

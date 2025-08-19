@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "./index.css";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
@@ -10,66 +10,68 @@ import ContactPage from "./Pages/Contact";
 import ProjectDetails from "./components/ProjectDetail";
 import WelcomeScreen from "./Pages/WelcomeScreen";
 import Chatbot from "./components/Chatbot.jsx";
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from "framer-motion";
 import PujaseraDetails from "./components/PujaseraDetail.jsx";
+import TirtoexpressDetail from "./components/TirtoexpressDetail.jsx";
 import MonitoringPoin from "./components/MonitoringPoin.jsx";
-import UploadData_Point_SamberPetir from "./components/UploadData_Point_SamberPetir.jsx";
+
+
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
-  return (
-    <>
-      <AnimatePresence mode="wait">
-        {showWelcome && (
-          <WelcomeScreen onLoadingComplete={() => setShowWelcome(false)} />
-        )}
-      </AnimatePresence>
-
-      {!showWelcome && (
+    return (
         <>
-          <Navbar />
-          <AnimatedBackground />
-          <Home />
-          <About />
-          <Portofolio />
-          <MonitoringPoin />
-            {/*<UploadData_Point_SamberPetir />*/}
-          <ContactPage />
-          <Chatbot />
+            <AnimatePresence mode="wait">
+                {showWelcome && (
+                    <WelcomeScreen onLoadingComplete={() => setShowWelcome(false)} />
+                )}
+            </AnimatePresence>
 
-          <footer>
-            <center>
+            {!showWelcome && (
+                <>
+                    <Navbar />
+                    <AnimatedBackground />
+                    <Home />
+                    <About />
+                    <Portofolio />
 
-              <span className="bg-white block text-sm  text-gray-500 text-center dark:text-gray-400">
+                    {/* ✅ Panggil MonitoringPoin di halaman utama */}
+                    <MonitoringPoin />
+
+                    <ContactPage />
+                    <Chatbot />
+
+                    <footer>
+                        <center>
+              <span className="bg-white block text-sm text-gray-500 text-center dark:text-gray-400">
                 © 2025{" "}
-                <a href="https://flowbite.com/" className="hover:underline">
+                  <a href="https://flowbite.com/" className="hover:underline">
                   Desa Wonokerso
                 </a>
                 . All Rights Reserved.
               </span>
-
-            </center>
-          </footer>
+                        </center>
+                    </footer>
+                </>
+            )}
         </>
-      )}
-    </>
-  );
+    );
 };
 
 const ProjectPageLayout = () => (
-  <>
-    <ProjectDetails />
-    <footer>
-      <center>
-        <hr className="my-3 border-gray-400 opacity-15 sm:mx-auto lg:my-6 text-center" />
-        <span className="block text-sm pb-4 text-gray-500 text-center dark:text-gray-400">
+    <>
+        <ProjectDetails />
+        <footer>
+            <center>
+                <hr className="my-3 border-gray-400 opacity-15 sm:mx-auto lg:my-6 text-center" />
+                <span className="block text-sm pb-4 text-gray-500 text-center dark:text-gray-400">
           © 2023{" "}
-          <a href="https://flowbite.com/" className="hover:underline">
+                    <a href="https://flowbite.com/" className="hover:underline">
             Desa Tunjungtirto
           </a>
           . All Rights Reserved.
         </span>
-      </center>
-    </footer>
-  </>
+            </center>
+        </footer>
+    </>
 );
 
 const PujaseraPageLayout = () => (
@@ -89,18 +91,45 @@ const PujaseraPageLayout = () => (
         </footer>
     </>
 );
-function App() {
-  const [showWelcome, setShowWelcome] = useState(true);
 
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LandingPage showWelcome={showWelcome} setShowWelcome={setShowWelcome} />} />
-        <Route path="/project/:id" element={<ProjectPageLayout />} />
-        <Route path="/pujasera/:id" element={<PujaseraPageLayout />} />
-      </Routes>
-    </BrowserRouter>
-  );
+const TirtoexpressPageLayout = () => (
+    <>
+        <TirtoexpressDetails />
+        <footer>
+            <center>
+                <hr className="my-3 border-gray-400 opacity-15 sm:mx-auto lg:my-6 text-center" />
+                <span className="block text-sm pb-4 text-gray-500 text-center dark:text-gray-400">
+          © 2023{" "}
+                    <a href="https://flowbite.com/" className="hover:underline">
+            Desa Tunjungtirto
+          </a>
+          . All Rights Reserved.
+        </span>
+            </center>
+        </footer>
+    </>
+);
+function App() {
+    const [showWelcome, setShowWelcome] = useState(true);
+
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route
+                    path="/"
+                    element={
+                        <LandingPage
+                            showWelcome={showWelcome}
+                            setShowWelcome={setShowWelcome}
+                        />
+                    }
+                />
+                <Route path="/project/:id" element={<ProjectPageLayout />} />
+                <Route path="/pujasera/:id" element={<PujaseraPageLayout />} />
+                <Route path="/tirto-express" element={<TirtoexpressPageLayout />} />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;

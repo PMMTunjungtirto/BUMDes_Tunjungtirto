@@ -1,41 +1,21 @@
 import React, { useState } from 'react';
 import { User, Trophy, AlertCircle, Loader2 } from 'lucide-react';
 
-// Komponen ini adalah aplikasi mandiri untuk memeriksa poin pengguna.
-// Tampilannya didesain mirip dengan komponen Chatbot yang Anda sediakan.
-// CATATAN: Kode ini menggunakan fungsi tiruan untuk mensimulasikan
-// pengambilan data dari database. Agar berfungsi, Anda perlu mengganti
-// fungsi 'checkUserPoints' dengan panggilan API yang sebenarnya ke
-// server backend Anda, yang akan terhubung ke database Oracle.
-
 export default function App() {
     const [userId, setUserId] = useState('');
     const [points, setPoints] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');
 
-    // Fungsi untuk mensimulasikan panggilan API ke server backend.
-    // Dalam aplikasi nyata, ini adalah panggilan fetch() ke API Anda sendiri.
-    const checkUserPoints = (id) => {
-        // Simulasikan penundaan jaringan
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                // Contoh data tiruan. Di skenario nyata, ini akan
-                // diganti dengan panggilan fetch ke API backend Anda.
-                // API backend kemudian akan mengkueri database Oracle.
-                const mockDatabase = {
-                    '12345': 2500,
-                    '67890': 150,
-                    '98765': 750,
-                };
+    // Panggil API backend (Express + Oracle)
+    const checkUserPoints = async (id) => {
+        const response = await fetch(`http://localhost:5000/api/points/${id}`);
+        const data = await response.json();
 
-                if (id in mockDatabase) {
-                    resolve(mockDatabase[id]);
-                } else {
-                    reject('ID Pengguna tidak ditemukan.');
-                }
-            }, 1000); // Penundaan 1 detik untuk mensimulasikan loading
-        });
+        if (!response.ok) {
+            throw data.error || "Terjadi kesalahan saat mengambil data.";
+        }
+        return data.points;
     };
 
     const handleSubmit = async (e) => {
@@ -62,10 +42,8 @@ export default function App() {
 
     return (
         <div className="min-h-screen bg-[#FFFDF6] flex items-center justify-center p-4 font-sans">
-            <div
-                className="max-w-7xl w-full bg-gradient-to-b from-white/10 to-white/5 rounded-2xl overflow-hidden backdrop-blur-xl shadow-xl"
-            >
-                {/* Bagian Header */}
+            <div className="max-w-7xl w-full bg-gradient-to-b from-white/10 to-white/5 rounded-2xl overflow-hidden backdrop-blur-xl shadow-xl">
+                {/* Header */}
                 <div className="p-6 border-b border-white/10">
                     <div className="flex items-center gap-3">
                         <div className="p-2 rounded-xl bg-indigo-500/20">
@@ -78,7 +56,7 @@ export default function App() {
                 </div>
 
                 <div className="p-6 space-y-6">
-                    {/* Formulir Input Pengguna */}
+                    {/* Form */}
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="space-y-2">
                             <label className="block text-sm font-medium text-black">
@@ -116,7 +94,7 @@ export default function App() {
                         </button>
                     </form>
 
-                    {/* Area Tampilan Hasil */}
+                    {/* Hasil */}
                     <div className="mt-6 min-h-[100px] flex items-center justify-center">
                         {error && (
                             <div className="flex items-center gap-2 p-4 text-red-400 bg-red-500/10 border border-red-500/20 rounded-xl w-full">
