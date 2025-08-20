@@ -2,7 +2,7 @@ import React, { useEffect, memo, useMemo } from "react";
 import { FileText, Code, ArrowUpRight, Sparkles, Eye, Target } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import PHOTO from "/public/Photo.png";
+import PHOTO from "/public/Photo.jpg";
 
 // Memoized Components
 const Header = memo(() => (
