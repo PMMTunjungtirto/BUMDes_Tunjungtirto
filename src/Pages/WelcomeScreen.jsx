@@ -121,23 +121,25 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
                       className="text-center mb-6 sm:mb-8 md:mb-12"
                       variants={childVariants}
                   >
-                    <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold space-y-2 sm:space-y-4">
-                      <div className="mb-2 sm:mb-4">
-                    <span data-aos="fade-right" data-aos-delay="200" className="inline-block px-2 bg-gradient-to-r from-black/100 via-black/75 to-black/55 bg-clip-text text-transparent">
-                      BUMDes
-                    </span>{' '}
-                        <span data-aos="fade-right" data-aos-delay="400" className="inline-block px-2 bg-gradient-to-r from-black/100 via-black/75 to-black/55 bg-clip-text text-transparent">
-                      Maju
-                    </span>{' '}
-                        <span data-aos="fade-right" data-aos-delay="600" className="inline-block px-2 bg-gradient-to-r from-black/100 via-black/75 to-black/55 bg-clip-text text-transparent">
-                      Bersama
+                    <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold space-y-4">
+                      {/* Baris 1: BUMDes Tirto Maju Bersama */}
+                      <div className="flex flex-wrap justify-center gap-2">
+                    <span data-aos="fade-right" data-aos-delay="200" className="px-2 bg-gradient-to-r from-black/100 via-black/75 to-black/55 bg-clip-text text-transparent">
+                      BUMDes Tirto
+                    </span>
+                        <span data-aos="fade-right" data-aos-delay="400" className="px-2 bg-gradient-to-r from-black/100 via-black/75 to-black/55 bg-clip-text text-transparent">
+                      Maju Bersama
+                    </span>
+                        <span data-aos="fade-right" data-aos-delay="600" className="px-2 bg-gradient-to-r from-black/100 via-black/75 to-black/55 bg-clip-text text-transparent">
+
                     </span>
                       </div>
+                      {/* Baris 2: Desa Tunjungtirto */}
                       <div>
-                    <span data-aos="fade-up" data-aos-delay="800" className="inline-block px-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                    <span data-aos="fade-up" data-aos-delay="800" className="px-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
                       Desa
-                    </span>{' '}
-                        <span data-aos="fade-up" data-aos-delay="1000" className="inline-block px-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                    </span>
+                        <span data-aos="fade-up" data-aos-delay="1000" className="px-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
                       Tunjungtirto
                     </span>
                       </div>
