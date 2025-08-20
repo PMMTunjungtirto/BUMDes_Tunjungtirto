@@ -33,8 +33,8 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
                     <About />
                     <Portofolio />
 
-                    {/* ✅ Panggil MonitoringPoin di halaman utama */}
-                    <MonitoringPoin />
+                    {/* ✅ Panggil MonitoringPoin di halaman utama <MonitoringPoin />*/}
+
 
                     <ContactPage />
                     <Chatbot />
