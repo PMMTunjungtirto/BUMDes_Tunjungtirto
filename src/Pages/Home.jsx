@@ -83,7 +83,7 @@ const SOCIAL_LINKS = [
   { icon: Twitter, link: "https://x.com/tunjungtirto"},
   { icon: Facebook, link: "https://www.facebook.com/tunjungtirto.singosari.malang/about?locale=id_ID" },
   { icon: Instagram, link: "https://www.instagram.com/desa.tunjungtirto?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" },
-  { icon: Locate, link: "https://maps.app.goo.gl/6VauGKRkqRpdYntu9"}
+  { icon: Locate, link: "https://maps.app.goo.gl/kn5tnJYSGPQVz57j9"}
 ];
 
 const Home = () => {

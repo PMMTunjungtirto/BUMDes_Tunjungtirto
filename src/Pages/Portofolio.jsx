@@ -221,12 +221,11 @@ export default function FullWidthTabs() {
             backgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
           }}>
-            BUMDes Maju Bersama
+            BUMDes Tirto Maju Bersama
           </span>
           </h2>
           <p className="text-black/50 max-w-2xl mx-auto text-sm md:text-base mt-2">
-            Explore my journey through projects, certifications, and technical expertise.
-            Each section represents a milestone in my continuous learning path.
+            Satu Hati Dari Desa Untuk Membangun Negeri
           </p>
         </div>
 

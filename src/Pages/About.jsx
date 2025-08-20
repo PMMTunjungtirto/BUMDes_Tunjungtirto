@@ -116,7 +116,7 @@ const StatCard = memo(({ icon: Icon, color, value, label, description, animation
 const VisionMission = memo(() => (
     <div className="mt-12 lg:mt-16" data-aos="fade-up" data-aos-duration="1000">
       <h3 className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7] mb-6 text-center lg:text-left relative">
-        VISI DAN MISI DESA TUNJUNGTIRTO
+        VISI DAN MISI BUMDES TIRTO MAJU BERSAMA
         <span className="absolute bottom-0 left-0 w-16 h-1 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-full"></span>
       </h3>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -125,10 +125,10 @@ const VisionMission = memo(() => (
           <div className="absolute -top-10 -right-10 w-20 h-20 bg-gradient-to-br from-[#6366f1]/20 to-[#a855f7]/20 rounded-full blur-md opacity-50 animate-pulse-slow"></div>
           <div className="relative z-10">
             <h4 className="text-lg sm:text-xl font-semibold text-black mb-4 flex items-center gap-2">
-              <Target className="w-5 h-5 text-[#6366f1]" /> Visi Desa Tunjungtirto
+              <Target className="w-5 h-5 text-[#6366f1]" /> Visi BUMDES
             </h4>
             <p className="text-black/70 text-sm sm:text-base leading-relaxed text-justify transition-all duration-300 group-hover:text-black/90 group-hover:bg-gradient-to-br from-[#6366f1]/10 to-[#a855f7]/10 group-hover:shadow-lg group-hover:scale-105">
-              Masyarakat Desa Tunjungtirto yang <strong>Berdaya</strong>, <strong>Sejahtera</strong>, <strong>Agamis</strong>, dan <strong>Mandiri</strong>, dengan memanfaatkan potensi lokal untuk meningkatkan kualitas sumber daya manusia, mengurangi kemiskinan, memperbaiki infrastruktur, memajukan ekonomi, serta menjaga toleransi antar umat beragama untuk kehidupan sosial yang rukun dan harmonis.
+              Mewujudkan kesejahteraan masyarakat yang <strong>Kreatif</strong>, <strong>Inovatif</strong>, dan <strong>Mandiri</strong> dengan motto ”<strong>Satu Hati Dari Desa Membangun Negeri</strong>”.
             </p>
           </div>
         </div>
@@ -137,59 +137,29 @@ const VisionMission = memo(() => (
           <div className="absolute -bottom-10 -left-10 w-20 h-20 bg-gradient-to-br from-[#a855f7]/20 to-[#6366f1]/20 rounded-full blur-md opacity-50 animate-pulse-slow"></div>
           <div className="relative z-10">
             <h4 className="text-lg sm:text-xl font-semibold text-black mb-4 flex items-center gap-2">
-              <Eye className="w-5 h-5 text-[#a855f7]" /> Misi Desa Tunjungtirto
+              <Eye className="w-5 h-5 text-[#a855f7]" /> Misi BUMDES
             </h4>
             <ul className="text-black/70 text-sm sm:text-base list-disc list-inside space-y-4">
               <li className="text-justify transition-all duration-300 group-hover:text-black/90 group-hover:bg-gradient-to-br from-[#a855f7]/10 to-[#6366f1]/10 group-hover:shadow-lg group-hover:scale-105">
-                <strong>Tunjungtirto Berahlaq</strong>: Membangun kehidupan beragama yang toleran, didukung sarana keagamaan untuk masyarakat yang beriman dan bertaqwa.
+                Meningkatkan perekonomian desa.
               </li>
               <li className="text-justify transition-all duration-300 group-hover:text-black/90 group-hover:bg-gradient-to-br from-[#a855f7]/10 to-[#6366f1]/10 group-hover:shadow-lg group-hover:scale-105">
-                <strong>Tunjungtirto Awet</strong>: Mengembangkan infrastruktur jalan, drainase, dan TPT yang terarah, berkualitas, dan bermanfaat bagi masyarakat.
+                Meningkatkan usaha masyarakat dalam pengelolaan potensi ekonomi desa.
               </li>
               <li className="text-justify transition-all duration-300 group-hover:text-black/90 group-hover:bg-gradient-to-br from-[#a855f7]/10 to-[#6366f1]/10 group-hover:shadow-lg group-hover:scale-105">
-                <strong>Tunjungtirto Rame</strong>: Mewujudkan desa wisata melalui Taman Tirto, Taman Dolan, dan kampung tematik untuk meningkatkan PAD.
+                Meningkatkan pendapatan masyarakat desa dan Pendapatan Asli Desa.
               </li>
               <li className="text-justify transition-all duration-300 group-hover:text-black/90 group-hover:bg-gradient-to-br from-[#a855f7]/10 to-[#6366f1]/10 group-hover:shadow-lg group-hover:scale-105">
-                <strong>Tunjungtirto Berseri</strong>: Menciptakan lingkungan bersih dan indah melalui pengelolaan sampah 3R (Reduce, Reuse, Recycle) berbasis masyarakat.
+                Memberantas kemiskinan dan pengembangan usaha ekonomi pedesaan.
               </li>
               <li className="text-justify transition-all duration-300 group-hover:text-black/90 group-hover:bg-gradient-to-br from-[#a855f7]/10 to-[#6366f1]/10 group-hover:shadow-lg group-hover:scale-105">
-                <strong>Tunjungtirto Sehat</strong>: Menyediakan layanan kesehatan dasar melalui Klinik Tirto Husada dan ambulance gratis.
+                Menambah lapangan pekerjaan.
               </li>
               <li className="text-justify transition-all duration-300 group-hover:text-black/90 group-hover:bg-gradient-to-br from-[#a855f7]/10 to-[#6366f1]/10 group-hover:shadow-lg group-hover:scale-105">
-                <strong>Tunjungtirto Cerdas</strong>: Memberikan pendidikan gratis melalui program kelompok belajar (Paket A, B, C) untuk mencegah putus sekolah.
+                Memajukan kesejahteraan rakyat.
               </li>
               <li className="text-justify transition-all duration-300 group-hover:text-black/90 group-hover:bg-gradient-to-br from-[#a855f7]/10 to-[#6366f1]/10 group-hover:shadow-lg group-hover:scale-105">
-                <strong>Tunjungtirto Makmur</strong>: Mendukung wirausaha melalui pinjaman modal lunak dari BUMDes Maju Bersama.
-              </li>
-              <li className="text-justify transition-all duration-300 group-hover:text-black/90 group-hover:bg-gradient-to-br from-[#a855f7]/10 to-[#6366f1]/10 group-hover:shadow-lg group-hover:scale-105">
-                <strong>Tunjungtirto Merona</strong>: Menyediakan sertifikasi tanah murah melalui proses penyuluhan, pengukuran, dan penerbitan sertifikat.
-              </li>
-              <li className="text-justify transition-all duration-300 group-hover:text-black/90 group-hover:bg-gradient-to-br from-[#a855f7]/10 to-[#6366f1]/10 group-hover:shadow-lg group-hover:scale-105">
-                <strong>Tunjungtirto Perduli</strong>: Membantu anak yatim, kaum dhuafa, dan penyandang disabilitas melalui Yayasan Tunjungtirto Amanah Maslahah.
-              </li>
-              <li className="text-justify transition-all duration-300 group-hover:text-black/90 group-hover:bg-gradient-to-br from-[#a855f7]/10 to-[#6366f1]/10 group-hover:shadow-lg group-hover:scale-105">
-                <strong>Tunjungtirto Canggih</strong>: Memodernisasi pelayanan surat-menyurat berbasis aplikasi untuk efisiensi.
-              </li>
-              <li className="text-justify transition-all duration-300 group-hover:text-black/90 group-hover:bg-gradient-to-br from-[#a855f7]/10 to-[#6366f1]/10 group-hover:shadow-lg group-hover:scale-105">
-                <strong>Tunjungtirto Aman</strong>: Meningkatkan keamanan lingkungan melalui sosialisasi dan pembangunan pos jaga berbasis masyarakat.
-              </li>
-              <li className="text-justify transition-all duration-300 group-hover:text-black/90 group-hover:bg-gradient-to-br from-[#a855f7]/10 to-[#6366f1]/10 group-hover:shadow-lg group-hover:scale-105">
-                <strong>Tunjungtirto Mewah</strong>: Membangun kantor terpadu LKD dan gedung serbaguna untuk kegiatan kemasyarakatan.
-              </li>
-              <li className="text-justify transition-all duration-300 group-hover:text-black/90 group-hover:bg-gradient-to-br from-[#a855f7]/10 to-[#6366f1]/10 group-hover:shadow-lg group-hover:scale-105">
-                <strong>Tunjungtirto Mili</strong>: Menyediakan air bersih di empat dusun dan mengatur pipanisasi antar desa.
-              </li>
-              <li className="text-justify transition-all duration-300 group-hover:text-black/90 group-hover:bg-gradient-to-br from-[#a855f7]/10 to-[#6366f1]/10 group-hover:shadow-lg group-hover:scale-105">
-                <strong>Tunjungtirto Nyeni</strong>: Memberikan wadah bagi seniman lokal melalui pembangunan gedung kesenian “Djatu”.
-              </li>
-              <li className="text-justify transition-all duration-300 group-hover:text-black/90 group-hover:bg-gradient-to-br from-[#a855f7]/10 to-[#6366f1]/10 group-hover:shadow-lg group-hover:scale-105">
-                <strong>Tunjungtirto Adil</strong>: Memverifikasi data KPM untuk memastikan bantuan pemerintah tepat sasaran.
-              </li>
-              <li className="text-justify transition-all duration-300 group-hover:text-black/90 group-hover:bg-gradient-to-br from-[#a855f7]/10 to-[#6366f1]/10 group-hover:shadow-lg group-hover:scale-105">
-                <strong>Tunjungtirto Makaryo</strong>: Menyediakan lapangan kerja melalui pengembangan pujasera, taman, dan kampung tematik.
-              </li>
-              <li className="text-justify transition-all duration-300 group-hover:text-black/90 group-hover:bg-gradient-to-br from-[#a855f7]/10 to-[#6366f1]/10 group-hover:shadow-lg group-hover:scale-105">
-                <strong>Tunjungtirto Bertani</strong>: Melindungi sektor pertanian melalui Perdes Tata Ruang Desa untuk menjaga lumbung desa.
+                Turut andil dalam melaksanakan program Pitulas Tuntas.
               </li>
             </ul>
           </div>
@@ -263,7 +233,7 @@ const AboutPage = () => {
                   data-aos-duration="1000"
               >
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
-                BUMDes Maju Bersama
+                BUMDes Tirto Maju Bersama
               </span>
                 <span
                     className="block mt-2 text-black"
@@ -279,7 +249,7 @@ const AboutPage = () => {
                   data-aos="fade-right"
                   data-aos-duration="1500"
               >
-                BUMDes <strong>Maju Bersama</strong> adalah badan usaha milik Desa Tunjungtirto yang berperan sebagai motor penggerak ekonomi dan pembangunan desa.
+                BUMDes <strong>Tirto Maju Bersama</strong> adalah badan usaha milik Desa Tunjungtirto yang berperan sebagai motor penggerak ekonomi dan pembangunan desa.
                 Melalui berbagai unit usaha seperti pengelolaan UMKM, jasa pelayanan, pengembangan desa wisata, hingga program pemberdayaan masyarakat,
                 BUMDes ini hadir untuk meningkatkan kesejahteraan warga dan mendorong kemandirian ekonomi desa.
                 Dengan prinsip transparansi, inovasi, dan keberlanjutan, BUMDes Maju Bersama menjadi mitra strategis bagi masyarakat, pemerintah, dan pihak swasta
